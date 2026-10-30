@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { PORTFOLIO_CONFIG } from "@/utils/constants";
 
 /**
@@ -48,6 +49,17 @@ export function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
+          <div className="flex w-full flex-col items-center">
+          <div className="mb-6 overflow-hidden rounded-full ring-4 ring-white/15">
+            <Image
+              src="/profile.jpg"
+              alt={`${PORTFOLIO_CONFIG.name} profile photo`}
+              width={160}
+              height={160}
+              priority
+              className="h-36 w-36 object-cover sm:h-40 sm:w-40"
+            />
+          </div>
           <div className="mb-6 space-y-4">
             <h1 className="text-5xl font-bold text-white sm:text-6xl lg:text-7xl">
               {PORTFOLIO_CONFIG.name}
@@ -55,6 +67,7 @@ export function Hero() {
             <p className="text-xl text-slate-300 sm:text-2xl">
               {PORTFOLIO_CONFIG.title}
             </p>
+          </div>
           </div>
         </motion.div>
 
@@ -93,6 +106,13 @@ export function Hero() {
           >
             <span className="mr-2">🐙</span>
             GitHub
+          </a>
+          <a
+            href="/resume.pdf"
+            download="Sneha-Gupta-Resume.pdf"
+            className="inline-flex items-center justify-center rounded-lg border-2 border-secondary-500 px-8 py-3 font-medium text-white transition hover:bg-secondary-600 focus:outline-none focus:ring-2 focus:ring-secondary-500 focus:ring-offset-2 dark:focus:ring-offset-slate-900"
+          >
+            Download Resume
           </a>
           </div>
         </motion.div>
