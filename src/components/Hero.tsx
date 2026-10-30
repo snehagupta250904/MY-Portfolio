@@ -148,16 +148,6 @@ export function Hero() {
           </div>
         </motion.div>
 
-        {/* Scroll indicator */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 0.8 }}
-        >
-          <div className="absolute bottom-8 left-1/2 -translate-x-1/2 transform">
-            <div className="animate-bounce text-2xl">⬇</div>
-          </div>
-        </motion.div>
       </div>
     </section>
   );
